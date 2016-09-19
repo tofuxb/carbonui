@@ -1,0 +1,29 @@
+{
+  "name": "carbonui",
+  "version": "1.0.0",
+  "description": "A mobile UI library base on Vue.js.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tofuxb/carbonui.git"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "mobile",
+    "carbon"
+  ],
+  "author": "Tofuxb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tofuxb/carbonui/issues"
+  },
+  "homepage": "https://github.com/tofuxb/carbonui#readme"
+}
