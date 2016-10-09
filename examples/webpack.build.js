@@ -5,6 +5,7 @@ var EnvPlugin = new webpack.DefinePlugin({
         'NODE_ENV': JSON.stringify('production')
     }
 })
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
     compressor: {
         warnings: false
@@ -20,7 +21,7 @@ module.exports = {
         filename: '[hash].bundle.js',
     },
 
-    plugins: [EnvPlugin, UglifyJsPlugin],
+    plugins: [EnvPlugin, UglifyJsPlugin, new ExtractTextPlugin('[name].css')],
 
     module: {
         loaders: [

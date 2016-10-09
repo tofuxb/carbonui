@@ -1,7 +1,9 @@
-import Button from './button/button.vue'
+import Button from './button/button.vue';
+import Grids from './grids/grids.vue';
+import Grid from './grids/grid.vue';
 
-const CarbonUI = {
-	Button
+export default {
+  Button,
+  Grids,
+  Grid
 }
-
-export default CarbonUI

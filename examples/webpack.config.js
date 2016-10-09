@@ -3,6 +3,7 @@ var path = require('path')
 var webpack = require('webpack')
 var precss = require('precss')
 var autoprefixer = require('autoprefixer')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
 
@@ -23,14 +24,14 @@ module.exports = {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.vue$/, loader: 'vue'},
-      { test: /\.less$/, loader: 'style-loader!css-loader!postcss-loader' },
+      { test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader') },
       { test: /\.(png|jpg|gif)$/, loader: 'file?name=[name].[ext]?[hash]' }
     ]
   },
 
   babel: {
     presets: ['es2015', 'stage-0'],
-    plugins: ['transform-runtime']
+    plugins: ['transform-runtime', 'add-module-exports']
   },
 
   postcss: function() {
@@ -46,7 +47,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin("bundle.css")
   ]
 
 }
